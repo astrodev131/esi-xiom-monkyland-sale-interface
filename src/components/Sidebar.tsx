@@ -8,7 +8,7 @@ const Sidebar = () => {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex flex-col w-64 shadow-md p-4 fixed top-0  text-black left-0 z-[50] bg-[#e7a324] h-full">
+      <aside className="hidden md:flex flex-col w-64 shadow-md p-4 fixed top-24  text-black left-0 z-[40] bg-[#e7a324] h-[500px]">
         <h2 className="text-xl font-bold">SOLANEX</h2>
         <nav className="mt-4">
           <Link href="/swap" className="block py-2 px-3 hover:bg-[#ff83359e]">

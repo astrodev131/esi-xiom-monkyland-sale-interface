@@ -10,131 +10,81 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="py-10 bg-[#e7a324]">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <footer
+      className="py-5 pt-12 bottom-0 w-full  border-b border-gray-800 bg-[#0A0B0D]/80 backdrop-blur-[32px] text-[#cfcfcf] z-50"
+      style={{ boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.15)" }}
+    >
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 animate-fadeIn">
           {/* Social Media & Logo */}
           <div className="flex flex-col items-center gap-5 md:items-start">
-            <Link
-              href="/"
-              className="flex flex-row items-center justify-start h-[120px] gap-4"
-            >
+            <Link href="/" className="flex items-center gap-4">
               <Image
                 alt="logo"
                 src="/images/logo.png"
                 width={120}
                 height={120}
-                className="h-full pb-2"
+                className="h-full pb-2 transition-transform hover:scale-110"
               />
             </Link>
             <div className="flex space-x-4">
-              <Link
-                href="#"
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
-                <Twitter size={28} />
-              </Link>
-              <Link
-                href="#"
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
-                <MessageCircle size={28} />
-              </Link>
-              <Link
-                href="#"
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
-                <Instagram size={28} />
-              </Link>
-              <Link
-                href="#"
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
-                <Youtube size={28} />
-              </Link>
-              <Link
-                href="#"
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
-                <Facebook size={28} />
-              </Link>
+              {[Twitter, MessageCircle, Instagram, Youtube, Facebook].map(
+                (Icon, index) => (
+                  <Link
+                    key={index}
+                    href="#"
+                    className="hover:text-gray-700 transition-all transform hover:scale-125 hover:shadow-lg duration-300"
+                  >
+                    <Icon size={30} className="drop-shadow-md" />
+                  </Link>
+                )
+              )}
             </div>
           </div>
 
           {/* Navigation Links */}
           <div className="flex flex-col items-center">
-            <h3 className="text-2xl font-bold mb-6">Quick Links</h3>
+            <h3 className="text-2xl font-bold mb-6  pb-2">Quick Links</h3>
             <nav className="grid grid-cols-2 gap-x-8 gap-y-4 text-center md:text-left">
-              <Link
-                href="#"
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
-                Swap
-              </Link>
-              <Link
-                href="#"
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
-                Pool
-              </Link>
-
-              <Link
-                href="#"
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
-                Buy SOLDEX
-              </Link>
-              <Link
-                href="#"
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
-                How To Buy
-              </Link>
-
-              <Link
-                href="#"
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
-                Invite
-              </Link>
+              {["Swap", "Pool", "Buy SOLDEX", "How To Buy", "Invite"].map(
+                (item, index) => (
+                  <Link
+                    key={index}
+                    href="#"
+                    className="hover:text-yellow-400 transition-transform transform hover:scale-110 duration-300"
+                  >
+                    {item}
+                  </Link>
+                )
+              )}
             </nav>
           </div>
 
           {/* Terms & Policies */}
           <div className="flex flex-col items-center md:items-end">
-            <h3 className="text-2xl font-bold mb-6">Legal</h3>
+            <h3 className="text-2xl font-bold mb-6 pb-2">Legal</h3>
             <nav className="flex flex-col space-y-4 text-center md:text-right">
-              <Link
-                href="#"
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
-                Terms & Conditions
-              </Link>
-              <Link
-                href="#"
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="#"
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
-                Cookie Policy
-              </Link>
-              <Link
-                href="#"
-                className="hover:text-yellow-300 transition-colors duration-300"
-              >
-                Legal Notice
-              </Link>
+              {[
+                "Terms & Conditions",
+                "Privacy Policy",
+                "Cookie Policy",
+                "Legal Notice",
+              ].map((item, index) => (
+                <Link
+                  key={index}
+                  href="#"
+                  className="hover:text-gray-700 transition-transform transform hover:scale-110 duration-300"
+                >
+                  {item}
+                </Link>
+              ))}
             </nav>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-white/20 text-center">
-          <p>
+        <div className="mt-12 pt-4 border-t border-white/20 text-center">
+          <p className="opacity-80 text-lg">
             &copy; {new Date().getFullYear()} MonkyLand. All rights reserved.
           </p>
         </div>

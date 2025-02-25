@@ -32,10 +32,10 @@ export default function Home() {
 
   return (
     <div className="">
-      <div className="w-full max-w-[1440px] px-5 py-9 relative flex justify-center">
+      <div className="w-full  px-5 py-9 relative flex justify-center">
         <BuyLayout />
       </div>
-      <div className="flex justify-center  max-w-[1440px] mb-9">
+      <div className="flex justify-center  w-full mb-9">
         <InfoBox />
       </div>
     </div>

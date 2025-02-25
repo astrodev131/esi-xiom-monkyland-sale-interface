@@ -52,7 +52,7 @@ const accordionItems = [
 
 export default function InfoBox() {
   return (
-    <div className="bg-[#e7a324] w-full md:w-[800px] mx-5 shadow-xl p-4 md:p-6 flex flex-col justify-center rounded-xl">
+    <div className="w-full md:w-[800px] mx-5 p-4 md:p-6 flex flex-col justify-center rounded-xl">
       <div className="text-center font-bold text-2xl sm:text-4xl my-8">
         Why Participate in MonkyLand?
       </div>

@@ -1,70 +1,176 @@
-import React from "react";
+// import React from "react";
+// import Link from "next/link";
+
+// export default function Header() {
+//   return (
+//     <div className="flex flex-row justify-center">
+//       <div
+//         className="w-full max-w-[1440px] px-5 relative flex"
+//         style={{ justifyContent: "space-between" }}
+//       >
+//         <Link
+//           href="/"
+//           className="flex flex-row items-center justify-start h-20 gap-4"
+//         >
+//           <img alt="logo" src="/images/monkey.png" className="h-full pb-2" />
+//           <div className="hidden sm:flex h-full pt-1 pb-2">
+//             <img alt="monkeyland" src="/images/monkeyland.png" className="" />
+//           </div>
+//         </Link>
+
+//         <div
+//           className="top-0 flex flex-row items-center  right-5"
+//           style={{ width: "max-content" }}
+//         >
+//           <Link href="/presale">
+//             <button className="px-5 py-2 bg-[#f67c2f] rounded-md text-[#eff3f6] h-12 text-base mr-4 ">
+//               Presale
+//             </button>
+//           </Link>
+
+//           <Link href="/affiliate" className="hidden md:flex">
+//             <button className="px-5 py-2 bg-[#f67c2f] rounded-md text-[#eff3f6] h-12 text-base mr-4 ">
+//               Affiliate
+//             </button>
+//           </Link>
+
+//           <CustomWalletButton />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+"use client";
+import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { toast } from "react-toastify";
-import { useWallet } from "@solana/wallet-adapter-react";
-import usePresale from "@/hooks/usePresale";
-import WalletMultiButtonDynamic, {
-  CustomWalletButton,
-} from "./WalletMultiButtonDynamic";
-import { PRESALE_AUTHORITY } from "@/constants/constants";
+import { CustomWalletButton } from "./WalletMultiButtonDynamic";
+
+// import { Button } from "./Home/Button";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
-  const { select, wallets, publicKey, disconnect } = useWallet();
-  const { walletConnected } = usePresale();
-
-  const onWalletConnect = () => {
-    if (!publicKey) {
-      const installedWallets = wallets.filter(
-        (wallet) => wallet.readyState === "Installed"
-      );
-      if (installedWallets.length <= 0) {
-        toast.warning("Phantom wallet is not installed yet.");
-        return;
-      }
-      select(wallets[1].adapter.name);
-    } else {
-      disconnect();
-    }
-  };
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<string | null>(null);
 
   return (
-    <div
-      className="flex flex-row justify-center"
-      style={{ backgroundColor: "rgb(7 10 41 / 70%)" }}
+    <header
+      className="fixed top-0 w-full border-b border-gray-800 bg-[#0A0B0D]/80 backdrop-blur-[32px] z-50"
+      style={{ boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.15)" }}
     >
-      <div
-        className="w-full max-w-[1440px] px-5 relative flex"
-        style={{ justifyContent: "space-between" }}
-      >
-        <Link
-          href="/"
-          className="flex flex-row items-center justify-start h-20 gap-4"
-        >
-          <img alt="logo" src="/images/monkey.png" className="h-full pb-2" />
-          <div className="hidden sm:flex h-full pt-1 pb-2">
-            <img alt="monkeyland" src="/images/monkeyland.png" className="" />
+      <div className="max-w-[1740px] px-[50px] mt-1 mx-auto flex h-[71px] items-center justify-between">
+        <div className="flex items-center gap-[46px]">
+          <Link
+            href="/"
+            className="flex flex-row items-center min-w-[50px] justify-start h-16 gap-4"
+          >
+            <Image
+              alt="logo"
+              src="/images/monkey.png"
+              className="h-full pb-2"
+              width={50}
+              height={50}
+            />
+            <div className="hidden sm:flex h-full pt-1 pb-2">
+              <Image
+                alt="monkeyland"
+                src="/images/monkeyland.png"
+                className=""
+                width={120}
+                height={50}
+              />
+            </div>
+          </Link>
+          <nav className="hidden 2xl:flex align-middle items-center gap-[26px]">
+            {[
+              "How to Buy",
+              "Tokenomics",
+              "Whitepaper",
+              "Roadmap",
+              "Main Website",
+              "Affiliate",
+              "Audit Results",
+            ].map((item) => (
+              <Link
+                key={item}
+                href="#"
+                className={`relative text-md text-[#cfcfcf] h-[70px] font-semibold hover:text-white transition-colors duration-500 flex items-center
+    before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-[#f67c2f] before:transition-all before:duration-[1000ms] before:ease-in-out
+    hover:before:w-full
+    ${selectedItem === item ? "border-b-2 border-[#f67c2f] text-white" : ""}
+  `}
+                onClick={() => setSelectedItem(item)}
+              >
+                <div className="flex flex-col">
+                  <div className="group">
+                    <div className="block group-hover:opacity-0 group-hover:mb-7 duration-500">
+                      {item}
+                    </div>
+                    <div className="opacity-0 absolute group-hover:opacity-100 group-hover:bottom-6 bottom-0 group-hover:block transition-all duration-500 ease-in-out">
+                      {item}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </nav>
+        </div>
+        <div className="flex justify-end items-center gap-2">
+          <div
+            className="top-0 flex flex-row items-center  right-5"
+            style={{ width: "max-content" }}
+          >
+            <Link href="/presale">
+              <button className="px-5 py-2 bg-[#f67c2f] rounded-md text-[#eff3f6] h-12 text-base mr-4 ">
+                Presale
+              </button>
+            </Link>
+
+            <Link href="/affiliate" className="hidden md:flex">
+              <button className="px-5 py-2 bg-[#f67c2f] rounded-md text-[#eff3f6] h-12 text-base mr-4 ">
+                Affiliate
+              </button>
+            </Link>
+
+            <CustomWalletButton />
           </div>
-        </Link>
-
-        <div
-          className="top-0 flex flex-row items-center  right-5"
-          style={{ width: "max-content" }}
-        >
-          <Link href="/presale">
-            <button className="px-5 py-2 bg-[#f67c2f] rounded-md text-[#eff3f6] h-12 text-base mr-4 ">
-              Presale
-            </button>
-          </Link>
-
-          <Link href="/affiliate" className="hidden md:flex">
-            <button className="px-5 py-2 bg-[#f67c2f] rounded-md text-[#eff3f6] h-12 text-base mr-4 ">
-              Affiliate
-            </button>
-          </Link>
-
-          <CustomWalletButton />
+          <div
+            className="2xl:hidden text-white cursor-pointer"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </div>
         </div>
       </div>
-    </div>
+
+      {mobileMenuOpen && (
+        <div className="2xl:hidden border-t z-50 h-screen border-gray-800 bg-[#0A0B0D] absolute w-[500px]">
+          <nav className="px-4 sm:px-6 lg:px-8 py-4">
+            {[
+              "How to Buy",
+              "Tokenomics",
+              "Whitepaper",
+              "Roadmap",
+              "Main Website",
+              "Affiliate",
+              "Audit Results",
+            ].map((item) => (
+              <Link
+                key={item}
+                href="#"
+                className="block py-2 text-lg text-[#cfcfcf] hover:text-white transition-colors"
+              >
+                {item}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
+    </header>
   );
 }
