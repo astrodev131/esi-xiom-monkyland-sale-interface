@@ -59,7 +59,7 @@ export default function Header() {
       className="fixed top-0 w-full border-b border-gray-800 bg-[#0A0B0D]/80 backdrop-blur-[32px] z-50"
       style={{ boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.15)" }}
     >
-      <div className="max-w-[1440px] px-6 mt-1 mx-auto flex h-[71px] items-center justify-between">
+      <div className="max-w-[1540px] px-6 mt-1 mx-auto flex h-[71px] items-center justify-between">
         <div className="flex items-center gap-8">
           <Link
             href="/"
@@ -82,7 +82,7 @@ export default function Header() {
               />
             </div>
           </Link>
-          <nav className="hidden 2xl:flex align-middle items-center gap-6">
+          <nav className="hidden xl:flex align-middle items-center gap-6">
             {[
               "How to Buy",
               "Tokenomics",
@@ -137,7 +137,7 @@ export default function Header() {
             <CustomWalletButton />
           </div>
           <div
-            className="2xl:hidden text-white cursor-pointer"
+            className="xl:hidden text-white cursor-pointer"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (

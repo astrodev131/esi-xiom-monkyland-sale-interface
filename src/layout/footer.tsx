@@ -14,18 +14,30 @@ export default function Footer() {
       className="py-5 pt-12 bottom-0 w-full  border-b border-gray-800 bg-[#0A0B0D]/80 backdrop-blur-[32px] text-[#cfcfcf] z-50"
       style={{ boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.15)" }}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-2 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 animate-fadeIn">
           {/* Social Media & Logo */}
           <div className="flex flex-col items-center gap-5 md:items-start">
-            <Link href="/" className="flex items-center gap-4">
+            <Link
+              href="/"
+              className="flex flex-row items-center min-w-[50px] justify-start h-16 gap-4"
+            >
               <Image
                 alt="logo"
-                src="/images/logo.png"
-                width={120}
-                height={120}
-                className="h-full pb-2 transition-transform hover:scale-110"
+                src="/images/monkey.png"
+                className="h-full pb-2"
+                width={60}
+                height={50}
               />
+              <div className="h-full pt-1 pb-2">
+                <Image
+                  alt="monkeyland"
+                  src="/images/monkeyland.png"
+                  className=""
+                  width={120}
+                  height={50}
+                />
+              </div>
             </Link>
             <div className="flex space-x-4">
               {[Twitter, MessageCircle, Instagram, Youtube, Facebook].map(
@@ -44,7 +56,7 @@ export default function Footer() {
 
           {/* Navigation Links */}
           <div className="flex flex-col items-center">
-            <h3 className="text-2xl font-bold mb-6  pb-2">Quick Links</h3>
+            <h3 className="text-3xl font-bold mb-6  pb-2">Quick Links</h3>
             <nav className="grid grid-cols-2 gap-x-8 gap-y-4 text-center md:text-left">
               {["Swap", "Pool", "Buy SOLDEX", "How To Buy", "Invite"].map(
                 (item, index) => (
@@ -62,7 +74,7 @@ export default function Footer() {
 
           {/* Terms & Policies */}
           <div className="flex flex-col items-center md:items-end">
-            <h3 className="text-2xl font-bold mb-6 pb-2">Legal</h3>
+            <h3 className="text-3xl font-bold mb-6 pb-2">Legal</h3>
             <nav className="flex flex-col space-y-4 text-center md:text-right">
               {[
                 "Terms & Conditions",
@@ -73,7 +85,7 @@ export default function Footer() {
                 <Link
                   key={index}
                   href="#"
-                  className="hover:text-yellow-400 border-b border-white transition-transform transform hover:scale-110 duration-300"
+                  className="hover:text-yellow-400 transition-transform transform hover:scale-110 duration-300"
                 >
                   {item}
                 </Link>
