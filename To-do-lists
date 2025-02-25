@@ -1,0 +1,77 @@
+Hello! I'm sending you what I've worked on so far. I have to leave home right now and haven't been able to finish everything, but you can start working on the updates for the presale box. I'll review everything tonight and update it further—only a few small things are missing.
+
+🛠 Changes for the Presale Box:
+<!-- 🔹 Replace all instances of "LING" with "MKYL" since the token name is not LING. -->
+
+<!-- 🔹 Add the investment progress bar showing the total amount raised (I'll send you a screenshot). -->
+
+<!-- 🔹 Add a purchase history section below the presale box (I'll send a screenshot). -->
+
+<!-- 🔹 Display a red warning message when a purchase below $50 is entered (e.g., "Minimum purchase: $50"). -->
+
+<!-- 🔹 Include a referral link below the presale box (Text: "Get Referral Link"). -->
+
+<!-- 🔹 Show the Listing TGE Price as $0.006 and the current % savings (I'll send a screenshot). -->
+
+<!-- 🔹 Below the "Claimable" section, add a box showing the % bonus for large purchases (I'll send a screenshot). -->
+
+<!-- 🔹 Fix the "MAX" button—it doesn’t detect the available balance when clicked. -->
+
+<!-- 🔹 Change "Purchasez" to "My Balance" to be more clear. -->
+
+🔹 Fix the "Claimable" percentage:
+
+It currently shows 100% right after buying, but it should display 0% at first.
+The correct vesting percentage should be shown only after the presale ends.
+🔍 Questions & Additional Features:
+🔹 Explain the "MANAGE" section and how it assigns allocations only to my account.
+
+🔹 Change "Manage" to "Presale" for clarity.
+
+🔹 To simplify things, we will create a separate webpage for the roadmap, tokenomics, whitepaper, etc.
+
+We need a code snippet to embed a simplified presale box that redirects to the full presale page when clicked. (I'll send a screenshot of the new box).
+🔹 Add a navigation menu in the top right corner with:
+
+How to Buy (link to Solanex)
+Tokenomics (link to Solanex)
+Whitepaper
+Main Website
+🔹 At the bottom, add a footer with:
+
+Social media icons (I'll send the links).
+Links to Terms & Conditions and Privacy Policy.
+Also, include the project logo.
+
+
+1️⃣ Changes in the Presale Box
+✅ Buttons and Texts:
+
+<!-- Change "Select Wallet" to "Connect Wallet" in the top right corner. -->
+
+<!-- Make the "Connect Wallet" button more noticeable (color change or white border). -->
+
+<!-- When purchasing and clicking "Go Next", change "Mark Transaction as Sent" to "Confirm Transaction". -->
+
+<!-- Change "Purchased" to "My Balance". -->
+
+✅ Corrections in Displayed Data:
+
+<!-- When purchasing, the total token amount should not appear in "Claimable". It should remain 0 until the end of the presale, when the correct percentage is unlocked. -->
+
+<!-- Add a new box below "Claimable" labeled "Claimed", displaying the total tokens already withdrawn. -->
+
+<!-- Add "Min $50" to the right of "Choose your payment method & amount (Min $50)". -->
+
+<!-- Bold the TGE price next to "16.67% to TGE Price $0.006". -->
+
+<!-- Add this text at the bottom of the presale box:
+"Earn an extra 10% from referrals." (Must link to the affiliate section). -->
+
+✅ Design & Functionality Adjustments:
+
+<!-- Affiliate box on mobile: Adjust size; currently, it gets cut off and misaligns the page. -->
+
+<!-- Logo on mobile: Move the affiliate button inside the new menu (details below) to free up space. Keep only "Presale" and "Connect Wallet" visible. -->
+
+<!-- Clicking "Presale" currently leads to "Manage"—fix the link and move "Manage" to the new menu. -->
