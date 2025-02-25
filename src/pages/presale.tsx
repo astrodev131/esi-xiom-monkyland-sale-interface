@@ -46,7 +46,7 @@ export default function Manage() {
     totalHardCap,
     stage_hardcap,
     minTokenBalancePerWallet,
-    maxTokenBalancePerWallet
+    maxTokenBalancePerWallet,
   } = usePresale();
 
   const anchorWallet = useAnchorWallet();
@@ -187,7 +187,6 @@ export default function Manage() {
 
   const [currentStatus, setCurrentStatus] = useState("");
 
-
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
@@ -201,7 +200,11 @@ export default function Manage() {
             style={{ alignItems: "center" }}
           >
             <div className="col-lg-auto mb-1 mb-lg-0 ico stageNumber">
-            <img alt="" src="/images/stage-check-on.png" style={{width: "32px"}}/>
+              <img
+                alt=""
+                src="/images/stage-check-on.png"
+                style={{ width: "32px" }}
+              />
             </div>
             <div className="col-lg-auto text-center text-lg-start txt">
               {" "}
@@ -218,7 +221,7 @@ export default function Manage() {
             style={{ alignItems: "center" }}
           >
             <div className="col-lg-auto mb-1 mb-lg-0 ico stageNumber">
-              <img alt="" src="/images/stage-check-off.png" className="w-6"/>
+              <img alt="" src="/images/stage-check-off.png" className="w-6" />
             </div>
             <div className="col-lg-auto text-center text-lg-start txt">
               {" "}
@@ -323,7 +326,12 @@ export default function Manage() {
                 >
                   <Grid container spacing={2}>
                     <Grid item xs={12} md={6}>
-                      <div className="flex flex-row items-center bg-[#e6f1fa] justify-between rounded-[7px] px-0.5 py-0.5" style={{cursor: stageNumber >= 1 ? "not-allowed" : "pointer"}}>
+                      <div
+                        className="flex flex-row items-center bg-[#e6f1fa] justify-between rounded-[7px] px-0.5 py-0.5"
+                        style={{
+                          cursor: stageNumber >= 1 ? "not-allowed" : "pointer",
+                        }}
+                      >
                         <div
                           className="w-48 h-10 px-4 py-3 flex flex-row items-center justify-between rounded-[7px] bg-[#472584] flex"
                           style={{ justifyContent: "space-evenly" }}
@@ -343,18 +351,23 @@ export default function Manage() {
                           <input
                             type="number"
                             min="0"
-                            value={stageNumber >= 1? totalSoftCap : presoftcap}
+                            value={stageNumber >= 1 ? totalSoftCap : presoftcap}
                             onChange={(e) => {
                               setPreSoftcap(Number(e.target.value));
                             }}
-                            disabled={stageNumber >= 1? true : false}
+                            disabled={stageNumber >= 1 ? true : false}
                             className="w-full h-10 outline-none px-2 text-[#212529] text-xl bg-transparent"
                           />
                         </div>
                       </div>
                     </Grid>
                     <Grid item xs={12} md={6}>
-                      <div className="flex flex-row items-center bg-[#e6f1fa] justify-between rounded-[7px] px-0.5 py-0.5" style={{cursor: stageNumber >= 1 ? "not-allowed" : "pointer"}}>
+                      <div
+                        className="flex flex-row items-center bg-[#e6f1fa] justify-between rounded-[7px] px-0.5 py-0.5"
+                        style={{
+                          cursor: stageNumber >= 1 ? "not-allowed" : "pointer",
+                        }}
+                      >
                         <div
                           className="w-48 h-10 px-4 py-3 flex flex-row items-center justify-between rounded-[7px] bg-[#472584] flex"
                           style={{ justifyContent: "space-evenly" }}
@@ -374,18 +387,23 @@ export default function Manage() {
                           <input
                             type="number"
                             min="0"
-                            value={stageNumber >= 1? totalHardCap : prehardcap}
+                            value={stageNumber >= 1 ? totalHardCap : prehardcap}
                             onChange={(e) => {
                               setPreHardcap(Number(e.target.value));
                             }}
-                            disabled={stageNumber >= 1? true : false}
+                            disabled={stageNumber >= 1 ? true : false}
                             className="w-full h-10 outline-none px-2 text-[#212529] text-xl bg-transparent"
                           />
                         </div>
                       </div>
                     </Grid>
                     <Grid item xs={12} md={6}>
-                      <div className="flex flex-row items-center bg-[#e6f1fa] justify-between rounded-[7px] px-0.5 py-0.5" style={{cursor: stageNumber >= 1 ? "not-allowed" : "pointer"}}>
+                      <div
+                        className="flex flex-row items-center bg-[#e6f1fa] justify-between rounded-[7px] px-0.5 py-0.5"
+                        style={{
+                          cursor: stageNumber >= 1 ? "not-allowed" : "pointer",
+                        }}
+                      >
                         <div
                           className="w-48 h-10 px-4 py-3 flex flex-row items-center justify-between rounded-[7px] bg-[#472584] flex"
                           style={{ justifyContent: "space-evenly" }}
@@ -405,18 +423,27 @@ export default function Manage() {
                           <input
                             type="number"
                             min="0"
-                            value={stageNumber >=1 ? minTokenBalancePerWallet :  preminTokenPer}
+                            value={
+                              stageNumber >= 1
+                                ? minTokenBalancePerWallet
+                                : preminTokenPer
+                            }
                             onChange={(e) => {
                               setPreMinTokenPer(Number(e.target.value));
                             }}
-                            disabled = {stageNumber >= 1 ? true : false}
+                            disabled={stageNumber >= 1 ? true : false}
                             className="w-full h-10 outline-none px-2 text-[#212529] text-xl bg-transparent"
                           />
                         </div>
                       </div>
                     </Grid>
                     <Grid item xs={12} md={6}>
-                      <div className="flex flex-row items-center bg-[#e6f1fa] justify-between rounded-[7px] px-0.5 py-0.5" style={{cursor: stageNumber >= 1 ? "not-allowed" : "pointer"}}>
+                      <div
+                        className="flex flex-row items-center bg-[#e6f1fa] justify-between rounded-[7px] px-0.5 py-0.5"
+                        style={{
+                          cursor: stageNumber >= 1 ? "not-allowed" : "pointer",
+                        }}
+                      >
                         <div
                           className="w-48 h-10 px-4 py-3 flex flex-row items-center justify-between rounded-[7px] bg-[#472584] flex"
                           style={{ justifyContent: "space-evenly" }}
@@ -436,11 +463,15 @@ export default function Manage() {
                           <input
                             type="number"
                             min="0"
-                            value={stageNumber >=1 ? maxTokenBalancePerWallet : premaxTokenPer}
+                            value={
+                              stageNumber >= 1
+                                ? maxTokenBalancePerWallet
+                                : premaxTokenPer
+                            }
                             onChange={(e) => {
                               setPreMaxTokenPer(Number(e.target.value));
                             }}
-                            disabled = {stageNumber >= 1 ? true : false}
+                            disabled={stageNumber >= 1 ? true : false}
                             className="w-full h-10 outline-none px-2 text-[#212529] text-xl bg-transparent"
                           />
                         </div>
@@ -568,7 +599,7 @@ export default function Manage() {
                           stageNumber >= 1 ? onNextPresale : onCreatePresale
                         }
                       >
-                        {stageNumber >= 1 ? "Next Presale" : "Create Presale" }
+                        {stageNumber >= 1 ? "Next Presale" : "Create Presale"}
                       </button>
                     </Grid>
                     <Grid item xs={6} md={6}>

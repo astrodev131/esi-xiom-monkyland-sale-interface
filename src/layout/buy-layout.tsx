@@ -798,7 +798,10 @@ export default function BuyLayout() {
             </div>
           </>
         )}
-        <Link href='/affiliate' className="fixed bottom-0 left-0 w-full py-3 shadow-md mt-4">
+        <Link
+          href="/affiliate"
+          className="fixed bottom-0 left-0 w-full py-3 shadow-md mt-4"
+        >
           <span className="text-[#000000] text-[20px] flex justify-center">
             Earn an extra 10% from referrals.
           </span>

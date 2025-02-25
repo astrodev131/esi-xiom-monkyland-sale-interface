@@ -3,7 +3,9 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 import { useWallet } from "@solana/wallet-adapter-react";
 import usePresale from "@/hooks/usePresale";
-import WalletMultiButtonDynamic, { CustomWalletButton } from "./WalletMultiButtonDynamic";
+import WalletMultiButtonDynamic, {
+  CustomWalletButton,
+} from "./WalletMultiButtonDynamic";
 import { PRESALE_AUTHORITY } from "@/constants/constants";
 
 export default function Header() {
