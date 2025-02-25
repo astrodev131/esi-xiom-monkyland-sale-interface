@@ -33,7 +33,7 @@ export default function Footer() {
                   <Link
                     key={index}
                     href="#"
-                    className="hover:text-gray-700 transition-all transform hover:scale-125 hover:shadow-lg duration-300"
+                    className="hover:text-yellow-400 border-1 border-b-white transition-all transform hover:scale-125 hover:shadow-lg duration-300"
                   >
                     <Icon size={30} className="drop-shadow-md" />
                   </Link>
@@ -73,7 +73,7 @@ export default function Footer() {
                 <Link
                   key={index}
                   href="#"
-                  className="hover:text-gray-700 transition-transform transform hover:scale-110 duration-300"
+                  className="hover:text-yellow-400 border-b border-white transition-transform transform hover:scale-110 duration-300"
                 >
                   {item}
                 </Link>
