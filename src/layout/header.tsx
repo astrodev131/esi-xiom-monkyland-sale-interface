@@ -59,64 +59,52 @@ export default function Header() {
       className="fixed top-0 w-full border-b border-gray-800 bg-[#0A0B0D]/80 backdrop-blur-[32px] z-50"
       style={{ boxShadow: "0px 1px 0px 0px rgba(255, 255, 255, 0.15)" }}
     >
-      <div className="max-w-[1540px] px-6 mt-1 mx-auto flex h-[71px] items-center justify-between">
+      <div className="max-w-[1540px] px-6 mt-1 mx-auto flex h-[81px] items-center justify-between">
         <div className="flex items-center gap-8">
           <Link
             href="/"
-            className="flex flex-row items-center min-w-[50px] justify-start h-16 gap-4"
+            className="flex flex-row items-center justify-start h-20 gap-4"
           >
-            <Image
-              alt="logo"
-              src="/images/monkey.png"
-              className="h-full pb-2"
-              width={60}
-              height={50}
-            />
+            <img alt="logo" src="/images/monkey.png" className="h-full pb-2" />
             <div className="hidden sm:flex h-full pt-1 pb-2">
-              <Image
-                alt="monkeyland"
-                src="/images/monkeyland.png"
-                className=""
-                width={120}
-                height={50}
-              />
+              <img alt="monkeyland" src="/images/monkeyland.png" className="" />
             </div>
           </Link>
-          <nav className="hidden xl:flex align-middle items-center gap-6">
-            {[
-              "How to Buy",
-              "Tokenomics",
-              "Whitepaper",
-              "Roadmap",
-              "Main Website",
-              "Affiliate",
-              "Audit Results",
-            ].map((item) => (
-              <Link
-                key={item}
-                href="#"
-                className={`relative text-md text-[#cfcfcf] h-[70px] font-semibold hover:text-white transition-colors duration-500 flex items-center
+        </div>
+        <nav className="hidden xl:flex align-middle items-center gap-6">
+          {[
+            "How to Buy",
+            "Tokenomics",
+            "Whitepaper",
+            "Roadmap",
+            "Main Website",
+            "Affiliate",
+            "Audit Results",
+          ].map((item) => (
+            <Link
+              key={item}
+              href="#"
+              className={`relative text-md text-[#cfcfcf] h-[70px] font-semibold hover:text-white transition-colors duration-500 flex items-center
         before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-[#f67c2f] before:transition-all before:duration-[1000ms] before:ease-in-out
         hover:before:w-full
         ${
           selectedItem === item ? "border-b-2 border-[#f67c2f] text-white" : ""
         }`}
-                onClick={() => setSelectedItem(item)}
-              >
-                <div className="flex flex-col">
-                  <div className="group">
-                    <div className="block group-hover:opacity-0 group-hover:mb-7 duration-500">
-                      {item}
-                    </div>
-                    <div className="opacity-0 absolute group-hover:opacity-100 group-hover:bottom-6 bottom-0 group-hover:block transition-all duration-500 ease-in-out">
-                      {item}
-                    </div>
+              onClick={() => setSelectedItem(item)}
+            >
+              <div className="flex flex-col">
+                <div className="group">
+                  <div className="block group-hover:opacity-0 group-hover:mb-7 duration-500">
+                    {item}
+                  </div>
+                  <div className="opacity-0 absolute group-hover:opacity-100 group-hover:bottom-6 bottom-0 group-hover:block transition-all duration-500 ease-in-out">
+                    {item}
                   </div>
                 </div>
-              </Link>
-            ))}
-          </nav>
-        </div>
+              </div>
+            </Link>
+          ))}
+        </nav>
         <div className="flex justify-end items-center gap-4">
           <div
             className="top-0 md:flex items-center right-5"
@@ -137,7 +125,7 @@ export default function Header() {
             <CustomWalletButton />
           </div>
           <div
-            className="xl:hidden text-white cursor-pointer"
+            className="2xl:hidden text-white cursor-pointer"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (

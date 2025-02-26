@@ -324,9 +324,9 @@ export default function BuyLayout() {
     <div className="flex flex-col sm:flex-row items-center gap-8">
       {/* Left Sidebar Section */}
       <div className="w-full sm:w-1/4 bg-[#e7a324] p-4 rounded-lg sidebar min-w-[300px] h-full text-center">
-        <div className="flex justify-end">
-          <button className="selected tokenButton">
-            <h4 className="font-bold text-xl">
+        <div className="flex w-full justify-center">
+          <button className="text-white rounded-sm">
+            <h4 className="font-bold text-xl w-full bg-[#ffc000] rounded-sm">
               {price_per_token == 0
                 ? 0
                 : (
