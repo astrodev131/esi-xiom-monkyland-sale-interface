@@ -19,13 +19,12 @@ function CountdownCustom({ startTime, endTime, stageNumber }) {
     // const difference = utcNow - futureDate.getTime();
     // const difference = endTime * 1000 - utcNow;
 
-
     var days = 0;
     var hours = 0;
     var minutes = 0;
     var seconds = 0;
     let difference = 0;
-    if(utcNow < startTime * 1000) {
+    if (utcNow < startTime * 1000) {
       difference = startTime * 1000 - utcNow;
       days = Math.floor(difference / (1000 * 60 * 60 * 24));
       hours = Math.floor(
@@ -72,7 +71,7 @@ function CountdownCustom({ startTime, endTime, stageNumber }) {
           <div
             className="flex flex-row items-left px-2 py-1 w-full justify-evenly"
             style={{
-              background: "#ffc000",
+              background: "#f67c2f",
             }}
           >
             {/* Days Box */}

@@ -17,10 +17,10 @@ export default function Footer() {
       <div className="container mx-auto px-2 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 animate-fadeIn">
           {/* Social Media & Logo */}
-          <div className="flex flex-col items-center gap-5 md:items-start">
+          <div className="flex flex-col items-center gap-5 md:items-center">
             <Link
               href="/"
-              className="flex flex-row items-center min-w-[50px] justify-start h-16 gap-4"
+              className="flex flex-row items-center min-w-[50px] justify-center h-16 gap-4"
             >
               <Image
                 alt="logo"
@@ -58,24 +58,30 @@ export default function Footer() {
           <div className="flex flex-col items-center">
             <h3 className="text-3xl font-bold mb-6  pb-2">Quick Links</h3>
             <nav className="grid grid-cols-2 gap-x-8 gap-y-4 text-center md:text-left">
-              {["Swap", "Pool", "Buy SOLDEX", "How To Buy", "Invite"].map(
-                (item, index) => (
-                  <Link
-                    key={index}
-                    href="#"
-                    className="hover:text-yellow-400 transition-transform transform hover:scale-110 duration-300"
-                  >
-                    {item}
-                  </Link>
-                )
-              )}
+              {[
+                "How to Buy",
+                "Tokenomics",
+                "Whitepaper",
+                "Roadmap",
+                "Main Website",
+                "Affiliate",
+                "Audit Results",
+              ].map((item, index) => (
+                <Link
+                  key={index}
+                  href="#"
+                  className="hover:text-yellow-400 transition-transform transform hover:scale-110 duration-300"
+                >
+                  {item}
+                </Link>
+              ))}
             </nav>
           </div>
 
           {/* Terms & Policies */}
-          <div className="flex flex-col items-center md:items-end">
+          <div className="flex flex-col items-center md:items-center">
             <h3 className="text-3xl font-bold mb-6 pb-2">Legal</h3>
-            <nav className="flex flex-col space-y-4 text-center md:text-right">
+            <nav className="flex flex-col space-y-4 text-center md:text-center">
               {[
                 "Terms & Conditions",
                 "Privacy Policy",
