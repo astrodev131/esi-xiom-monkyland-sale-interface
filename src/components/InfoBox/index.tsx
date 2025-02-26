@@ -53,9 +53,9 @@ const accordionItems = [
 export default function InfoBox() {
   return (
     <div className="w-full md:w-[800px] mx-5 p-4 md:p-6 flex flex-col justify-center rounded-xl">
-      <div className="text-center font-bold text-2xl sm:text-4xl my-8">
+      <h1 className="mx-auto text-center text-[36px] font-bold text-white drop-shadow-[4px_4px_0px_rgba(221,82,48,1)] mb-10">
         Why Participate in MonkyLand?
-      </div>
+      </h1>
       <Accordion
         type="single"
         collapsible
