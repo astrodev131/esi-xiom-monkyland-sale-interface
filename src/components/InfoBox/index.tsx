@@ -82,7 +82,9 @@ export default function InfoBox() {
         ))}
       </Accordion>
       <div className="flex justify-center my-4">
-        <button className="btn-primary w-full sm:w-1/2">LEARN MORE</button>
+        <button className="w-full sm:w-1/2 p-3 text-white rounded-lg hover:bg-[#f67b2fd0] bg-[#f67c2f]">
+          LEARN MORE
+        </button>
       </div>
     </div>
   );
